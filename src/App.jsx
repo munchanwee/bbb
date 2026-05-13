@@ -74,14 +74,16 @@ export default function App() {
       <main className="page intro-page">
         <Header code="000_STATUS CHECK" />
         <section className="hero frame">
-          <p className="eyebrow">해삶도 : 삶의 해상도</p>
+          <div className="brand-row">
+            <p className="eyebrow">해삶도 : 삶의 해상도</p>
+            <a className="insta-link" href="https://www.instagram.com/haesalmdo/" target="_blank" rel="noreferrer">@haesalmdo</a>
+          </div>
           <h1>괜찮성 검사</h1>
-          <p className="subtitle">나는 괜찮음을 확인합니다.</p>
+          <p className="subtitle">나의 괜찮음을 확인합니다.</p>
           <p className="note highlight">높고 낮음을 재는 검사가 아니라, 지금 나의 상태를 조용히 살펴보는 점검입니다.</p>
           <div className="intro-copy">
             <p>이 점검은 좋고 나쁨을 판단하지 않는다.</p>
             <p>지금 어떤 방식으로 살아가고 있는지,<br />무너졌을 때 어떻게 돌아오고,<br />어디로 가는지 모를 때 무엇을 따라 움직이는지,<br />지나간 감정을 어떻게 다루는지 조용히 살펴본다.</p>
-            <p>정답은 없다.<br />16개의 장면을 지나며 지금의 괜찮음을 확인한다.</p>
           </div>
           <button className="primary-btn" onClick={start}>괜찮음 확인하기</button>
         </section>
