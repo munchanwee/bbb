@@ -25,6 +25,23 @@ const defaultScores = () => ({
   emotion: { release: 0, hold: 0 }
 });
 
+const buildMaxScores = () => {
+  const maxScores = defaultScores();
+
+  questions.forEach((question) => {
+    question.choices.forEach((choice) => {
+      choice.scores.forEach(({ axis, value, weight }) => {
+        if (!maxScores[axis] || maxScores[axis][value] === undefined) return;
+        maxScores[axis][value] += weight;
+      });
+    });
+  });
+
+  return maxScores;
+};
+
+const maxScores = buildMaxScores();
+
 export function calculateResult(answers) {
   const scores = defaultScores();
   const lastAxisValue = {};
@@ -45,12 +62,15 @@ export function calculateResult(answers) {
 
   Object.entries(AXES).forEach(([axis, values]) => {
     const [a, b] = values;
-    if (scores[axis][a] > scores[axis][b]) selected[axis] = a;
-    else if (scores[axis][b] > scores[axis][a]) selected[axis] = b;
+    const normalizedA = maxScores[axis][a] ? scores[axis][a] / maxScores[axis][a] : 0;
+    const normalizedB = maxScores[axis][b] ? scores[axis][b] / maxScores[axis][b] : 0;
+
+    if (normalizedA > normalizedB) selected[axis] = a;
+    else if (normalizedB > normalizedA) selected[axis] = b;
     else selected[axis] = lastAxisValue[axis] || a;
   });
 
   const key = `${selected.standard}-${selected.recovery}-${selected.direction}-${selected.emotion}`;
 
-  return { key, scores, selected };
+  return { key, scores, selected, maxScores };
 }
