@@ -113,8 +113,8 @@ ${HAESALMDO_URL}`;
           <DecorativeCharacter src={characters.duo} className="intro-character" alt="위위와 문문이" />
           <p className="result-note">점수는 나오지 않습니다.<br />결과는 하나의 상태값으로 출력됩니다.</p>
           <div className="intro-copy">
-            <p>이 점검은 좋고 나쁨을 판단하지 않는다.</p>
-            <p>지금 어떤 방식으로 살아가고 있는지,<br />무너졌을 때 어떻게 돌아오는지,<br />길을 잃었을 때 무엇을 따라 움직이는지,<br />지나간 감정을 어떻게 다루는지 살펴본다.</p>
+            <p>이 점검은 좋고 나쁨을 판단하지 않습니다.</p>
+            <p>지금 어떤 방식으로 살아가고 있는지,<br />무너졌을 때 어떻게 돌아오는지,<br />길을 잃었을 때 무엇을 따라 움직이는지,<br />지나간 감정을 어떻게 다루는지 살펴봅니다.</p>
           </div>
         </section>
       </main>

@@ -90,7 +90,7 @@ export const questions = [
   {
     id: 9,
     scene: '갑자기 비가 왔다',
-    text: '우산은 없고\n비는 생각보다 오래 붙어 있었다.',
+    text: '우산은 없고\n비는 생각보다 오래 내리고 있었다.',
     choices: [
       { id: 'a', text: '비 피할 곳부터 찾았다', scores: [{ axis: 'emotion', value: 'release', weight: 1 }, { axis: 'recovery', value: 'return', weight: 0.5 }] },
       { id: 'b', text: '조금 젖는 정도는 그냥 두었다', scores: [{ axis: 'emotion', value: 'release', weight: 1 }, { axis: 'standard', value: 'internal', weight: 0.5 }] },
@@ -167,7 +167,7 @@ export const questions = [
   {
     id: 16,
     scene: '집 앞에 도착했다',
-    text: '생각보다 조용했다.\n무슨 일이 끝난 것 같기도 했다.',
+    text: '생각보다 조용했다.\n여행의 끝에 나에게 집중할 수 있었다.',
     choices: [
       { id: 'a', text: '짐부터 풀었다', scores: [{ axis: 'recovery', value: 'return', weight: 1 }, { axis: 'emotion', value: 'release', weight: 0.5 }] },
       { id: 'b', text: '근처 카페를 들렀다 간다', scores: [{ axis: 'recovery', value: 'stay', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] },
