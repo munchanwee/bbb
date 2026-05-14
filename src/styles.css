@@ -145,10 +145,12 @@ h1, h2 {
 .intro-copy {
   margin: 42px 0 44px;
   max-width: 720px;
-  font-size: clamp(14px, 1.45vw, 16px);
+  font-family: 'Noto Serif KR', 'KoPub Batang', 'AppleMyungjo', 'Nanum Myeongjo', Georgia, serif;
+  font-size: clamp(13px, 1.35vw, 15px);
   line-height: 2.05;
-  letter-spacing: 0.045em;
-  color: #222;
+  letter-spacing: -0.012em;
+  color: #3f3f3f;
+  font-weight: 400;
 }
 
 .intro-copy p {
@@ -433,10 +435,11 @@ button:not(:disabled):hover {
   }
 
   .intro-copy {
-    font-size: 13px;
-    line-height: 1.9;
-    letter-spacing: 0.025em;
+    font-size: 12.5px;
+    line-height: 1.95;
+    letter-spacing: -0.01em;
     margin: 34px 0 38px;
+    color: #3f3f3f;
   }
 
   .progress-wrap {

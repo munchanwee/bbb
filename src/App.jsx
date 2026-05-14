@@ -49,7 +49,7 @@ export default function App() {
       setTimeout(() => {
         setScreen(screens.result);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 900);
+      }, 5000);
     }
   };
 
