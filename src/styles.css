@@ -4,7 +4,7 @@
   --muted: #5c5c5c;
   --line: #111111;
   --yellow: #fff176;
-  --soft: #f8f8f4;
+  --soft: #fafaf6;
   font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--ink);
   background: var(--bg);
@@ -12,13 +12,17 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
   word-break: keep-all;
+  overflow-x: hidden;
 }
 
 button, a {
@@ -26,8 +30,12 @@ button, a {
   color: inherit;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .page {
-  min-height: 100vh;
+  min-height: 100svh;
   padding: 42px 24px 72px;
   background:
     linear-gradient(var(--bg), var(--bg)) padding-box,
@@ -35,10 +43,12 @@ button, a {
 }
 
 .site-header {
+  width: 100%;
   max-width: 980px;
   margin: 0 auto 42px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 18px;
   font-family: 'Courier New', ui-monospace, monospace;
   font-size: 14px;
@@ -47,10 +57,16 @@ button, a {
   padding-bottom: 16px;
 }
 
+.site-header span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .frame {
+  width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.97);
   border-top: 2px solid var(--line);
   border-bottom: 2px solid var(--line);
   padding: clamp(34px, 6vw, 72px) clamp(18px, 5vw, 62px);
@@ -94,19 +110,20 @@ button, a {
 h1, h2 {
   margin: 0;
   line-height: 1.05;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
 }
 
 .hero h1, .result-title {
-  font-size: clamp(54px, 10vw, 118px);
+  font-size: clamp(50px, 9vw, 112px);
   font-weight: 950;
   margin-bottom: 28px;
+  overflow-wrap: break-word;
 }
 
 .subtitle {
-  font-size: clamp(23px, 3.6vw, 42px);
-  letter-spacing: 0.055em;
-  line-height: 1.42;
+  font-size: clamp(22px, 3.2vw, 40px);
+  letter-spacing: 0.045em;
+  line-height: 1.45;
   margin: 0 0 30px;
 }
 
@@ -115,9 +132,9 @@ h1, h2 {
 .result-body,
 .result-status,
 .share-sentence {
-  font-size: clamp(18px, 2.2vw, 25px);
+  font-size: clamp(18px, 2.1vw, 24px);
   line-height: 1.86;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.035em;
 }
 
 .note {
@@ -128,9 +145,9 @@ h1, h2 {
 .intro-copy {
   margin: 42px 0 44px;
   max-width: 720px;
-  font-size: clamp(14px, 1.55vw, 17px);
+  font-size: clamp(14px, 1.45vw, 16px);
   line-height: 2.05;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.045em;
   color: #222;
 }
 
@@ -142,6 +159,8 @@ h1, h2 {
   display: inline;
   background: linear-gradient(to top, var(--yellow) 0 44%, transparent 44% 100%);
   padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .primary-btn, .secondary-btn {
@@ -193,7 +212,7 @@ button:not(:disabled):hover {
 }
 
 .question-card h1 {
-  font-size: clamp(42px, 8vw, 84px);
+  font-size: clamp(40px, 7vw, 82px);
   margin-bottom: 32px;
 }
 
@@ -227,9 +246,9 @@ button:not(:disabled):hover {
   background: transparent;
   padding: 20px 4px;
   cursor: pointer;
-  font-size: clamp(17px, 2.1vw, 22px);
+  font-size: clamp(17px, 2vw, 21px);
   line-height: 1.58;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.025em;
 }
 
 .choice span {
@@ -241,6 +260,8 @@ button:not(:disabled):hover {
 
 .choice.selected em {
   background: linear-gradient(to top, var(--yellow) 0 45%, transparent 45% 100%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .choice:hover em {
@@ -324,29 +345,187 @@ button:not(:disabled):hover {
 }
 
 .debug-panel {
-  margin-top: 28px;
-  border-top: 1px solid var(--line);
-  padding-top: 14px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.debug-panel summary {
-  cursor: pointer;
-  font-family: 'Courier New', ui-monospace, monospace;
+  display: none;
 }
 
 @media (max-width: 640px) {
-  .page { padding: 24px 16px 56px; }
-  .site-header { font-size: 11px; margin-bottom: 28px; }
-  .frame { padding: 30px 0; }
-  .brand-row { display: block; }
-  .insta-link { display: inline-block; margin-top: 12px; }
-  .hero.frame { min-height: auto; }
-  .hero h1, .result-title { font-size: 54px; }
-  .subtitle { font-size: 24px; }
-  .note, .question-text, .result-body, .result-status, .share-sentence { font-size: 18px; line-height: 1.78; }
-  .intro-copy { font-size: 14px; line-height: 1.95; }
-  .choice { grid-template-columns: 30px 1fr; padding: 16px 0; }
-  .nav-row { justify-content: flex-start; }
+  .page {
+    padding: max(24px, env(safe-area-inset-top)) 18px max(48px, env(safe-area-inset-bottom));
+  }
+
+  .site-header {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    margin-bottom: 28px;
+    padding-bottom: 13px;
+    border-bottom-width: 1.5px;
+  }
+
+  .site-header span:last-child {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .frame {
+    padding: 30px 0;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+  }
+
+  .hero.frame {
+    min-height: calc(100svh - 128px);
+  }
+
+  .brand-row {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .insta-link {
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .eyebrow,
+  .insta-link {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 15vw, 62px);
+    line-height: 1.04;
+    margin-bottom: 24px;
+  }
+
+  .result-title {
+    font-size: clamp(38px, 12vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+    margin-bottom: 28px;
+  }
+
+  .question-card h1 {
+    font-size: clamp(36px, 11vw, 48px);
+    line-height: 1.14;
+    margin-bottom: 26px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    line-height: 1.55;
+    letter-spacing: 0.025em;
+    margin-bottom: 26px;
+  }
+
+  .note {
+    font-size: 17px;
+    line-height: 1.86;
+    letter-spacing: 0.02em;
+  }
+
+  .intro-copy {
+    font-size: 13px;
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+    margin: 34px 0 38px;
+  }
+
+  .progress-wrap {
+    font-size: 12px;
+    margin-bottom: 34px;
+  }
+
+  .question-text {
+    font-size: 18px;
+    line-height: 1.82;
+    letter-spacing: 0.02em;
+  }
+
+  .mini-guide {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .choices {
+    margin: 34px 0 28px;
+  }
+
+  .choice {
+    grid-template-columns: 28px 1fr;
+    gap: 10px;
+    padding: 17px 0;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.015em;
+  }
+
+  .button-row {
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .nav-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .primary-btn.small {
+    width: 100%;
+    padding: 13px 12px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .loading-box {
+    min-height: 360px;
+  }
+
+  .loading-box h2 {
+    font-size: clamp(34px, 11vw, 48px);
+    line-height: 1.15;
+  }
+
+  .result-status {
+    font-size: 18px;
+    line-height: 1.86;
+    letter-spacing: 0.02em;
+  }
+
+  .result-body {
+    margin-top: 42px;
+    font-size: 17px;
+    line-height: 1.9;
+    letter-spacing: 0.01em;
+  }
+
+  .paragraph-gap { height: 19px; }
+
+  .share-sentence {
+    font-size: 18px;
+    line-height: 1.82;
+    letter-spacing: 0.015em;
+    margin-top: 42px;
+  }
+
+  .tags {
+    gap: 8px;
+    margin-top: 26px;
+  }
+
+  .tags span {
+    font-size: 11px;
+    padding: 7px 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page { padding-left: 14px; padding-right: 14px; }
+  .hero h1 { font-size: 45px; }
+  .result-title { font-size: 36px; }
+  .question-card h1 { font-size: 34px; }
+  .choice { font-size: 15px; }
+  .result-body { font-size: 16px; }
 }
