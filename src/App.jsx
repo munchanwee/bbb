@@ -127,11 +127,13 @@ ${HAESALMDO_URL}`;
           <h1>괜찮성 검사</h1>
           <p className="subtitle">나의 괜찮음을 확인합니다.</p>
           <p className="note highlight">높고 낮음을 재는 검사가 아니라, 지금 나의 상태를 조용히 살펴보는 점검입니다.</p>
+          <p className="action-note">16개의 장면을 지나며<br />약 2분 동안 나의 괜찮음이<br />어떤 방식으로 작동하는지 확인합니다.</p>
+          <button className="primary-btn" onClick={start}>괜찮음 확인하기 →</button>
+          <p className="result-note">점수는 나오지 않습니다.<br />결과는 하나의 상태값으로 출력됩니다.</p>
           <div className="intro-copy">
             <p>이 점검은 좋고 나쁨을 판단하지 않는다.</p>
-            <p>지금 어떤 방식으로 살아가고 있는지,<br />무너졌을 때 어떻게 돌아오고,<br />어디로 가는지 모를 때 무엇을 따라 움직이는지,<br />지나간 감정을 어떻게 다루는지 조용히 살펴본다.</p>
+            <p>지금 어떤 방식으로 살아가고 있는지,<br />무너졌을 때 어떻게 돌아오는지,<br />길을 잃었을 때 무엇을 따라 움직이는지,<br />지나간 감정을 어떻게 다루는지 살펴본다.</p>
           </div>
-          <button className="primary-btn" onClick={start}>괜찮음 확인하기</button>
           <DecorativeCharacter src={characters.duo} className="intro-character" alt="위위와 문문이" />
         </section>
       </main>
