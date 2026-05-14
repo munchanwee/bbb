@@ -70,12 +70,6 @@ export default function App() {
     }
   };
 
-  const shareKakao = () => {
-    // Kakao JavaScript SDK를 연결하면 이 부분에 Kakao.Share.sendDefault 로직을 넣으면 됩니다.
-    copyResult();
-    alert('카카오 공유 SDK 연결 전입니다. 결과 문구를 클립보드에 복사했습니다.');
-  };
-
   if (screen === screens.intro) {
     return (
       <main className="page intro-page">
@@ -136,7 +130,6 @@ export default function App() {
           <div className="button-row">
             <button className="secondary-btn" onClick={start}>다시하기</button>
             <button className="secondary-btn" onClick={copyResult}>{copied ? '복사됨' : '링크/결과 복사'}</button>
-            <button className="primary-btn small" onClick={shareKakao}>카카오톡 공유</button>
           </div>
           <a className="essaytoon-link" href={HAESALMDO_URL} target="_blank" rel="noreferrer">해삶도 에세이툰 보기</a>
         </section>

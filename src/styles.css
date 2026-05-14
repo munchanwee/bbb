@@ -318,7 +318,15 @@ button:not(:disabled):hover {
   margin: 10px 0 40px;
 }
 
-.result-body { margin-top: 52px; }
+.result-body {
+  margin-top: 52px;
+  color: #3f3f3f;
+  font-family: 'Noto Serif KR', 'KoPub Batang', 'AppleMyungjo', 'Nanum Myeongjo', Georgia, serif;
+  font-size: clamp(15px, 1.78vw, 20px);
+  line-height: 2.05;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
 
 .result-body p { margin: 0; }
 
@@ -496,9 +504,10 @@ button:not(:disabled):hover {
 
   .result-body {
     margin-top: 42px;
-    font-size: 17px;
-    line-height: 1.9;
-    letter-spacing: 0.01em;
+    font-size: 14.5px;
+    line-height: 2.02;
+    letter-spacing: -0.015em;
+    color: #3f3f3f;
   }
 
   .paragraph-gap { height: 19px; }
@@ -527,7 +536,7 @@ button:not(:disabled):hover {
   .result-title { font-size: 36px; }
   .question-card h1 { font-size: 34px; }
   .choice { font-size: 15px; }
-  .result-body { font-size: 16px; }
+  .result-body { font-size: 14px; }
 }
 
 /* v3: haesalmdo frame header + subtle character placement */
