@@ -139,7 +139,7 @@ export const questions = [
       { id: 'a', text: '사진부터 찍었다', scores: [{ axis: 'direction', value: 'yes', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] },
       { id: 'b', text: '다음에 다시 와야겠다고 생각했다', scores: [{ axis: 'direction', value: 'yes', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] },
       { id: 'c', text: '그냥 한참 보고 있었다', scores: [{ axis: 'direction', value: 'no', weight: 1 }, { axis: 'emotion', value: 'release', weight: 0.5 }] },
-      { id: 'd', text: '이곳에서 하루 더 있다가 버린다', scores: [{ axis: 'direction', value: 'no', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] }
+      { id: 'd', text: '이곳에서 하루를 보낸다', scores: [{ axis: 'direction', value: 'no', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] }
     ]
   },
   {

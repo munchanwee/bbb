@@ -529,3 +529,167 @@ button:not(:disabled):hover {
   .choice { font-size: 15px; }
   .result-body { font-size: 16px; }
 }
+
+/* v3: haesalmdo frame header + subtle character placement */
+.site-header {
+  max-width: 980px;
+  margin: 0 auto 0;
+  padding: 26px clamp(18px, 5vw, 48px);
+  border: 2px solid var(--line);
+  background: rgba(255,255,255,0.98);
+  box-shadow: 12px 12px 0 var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.header-brand b {
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.insta-link {
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 3px;
+  white-space: nowrap;
+}
+
+.frame {
+  margin-top: -2px;
+  border: 2px solid var(--line);
+  background: rgba(255,255,255,0.98);
+  box-shadow: 12px 12px 0 var(--line);
+}
+
+.intro-mark {
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  margin-bottom: 22px;
+}
+
+.character {
+  display: block;
+  width: 92px;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+.intro-character {
+  position: absolute;
+  right: clamp(20px, 5vw, 58px);
+  bottom: clamp(20px, 5vw, 48px);
+  width: clamp(74px, 12vw, 120px);
+}
+
+.loading-character {
+  width: clamp(72px, 12vw, 108px);
+  margin: 34px 0 0 auto;
+}
+
+.result-character {
+  width: clamp(62px, 10vw, 92px);
+  margin: 42px 0 0 auto;
+}
+
+.essaytoon-link {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  border: 2px solid var(--line);
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  background: linear-gradient(to top, var(--yellow) 0 45%, #fff 45% 100%);
+}
+
+.essaytoon-link:hover,
+.insta-link:hover,
+.header-brand:hover {
+  background: linear-gradient(to top, rgba(255,241,118,0.75) 0 45%, transparent 45% 100%);
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 20px 18px;
+    box-shadow: 7px 8px 0 var(--line);
+    align-items: center;
+  }
+
+  .header-brand {
+    gap: 9px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .insta-link {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    border-bottom-width: 1.5px;
+  }
+
+  .frame {
+    box-shadow: 7px 8px 0 var(--line);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .intro-mark {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  .intro-character {
+    position: static;
+    width: 78px;
+    margin: 28px 0 0 auto;
+  }
+
+  .loading-character,
+  .result-character {
+    width: 72px;
+  }
+
+  .essaytoon-link {
+    font-size: 13px;
+    padding: 13px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    padding: 18px 14px;
+  }
+  .header-brand {
+    font-size: 11px;
+    gap: 7px;
+    letter-spacing: 0.14em;
+  }
+  .insta-link {
+    font-size: 11px;
+    letter-spacing: 0.09em;
+  }
+}

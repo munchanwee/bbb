@@ -10,6 +10,13 @@ const screens = {
   result: 'result'
 };
 
+const HAESALMDO_URL = 'https://www.instagram.com/haesalmdo/';
+const characters = {
+  wiwi: 'https://static.wixstatic.com/media/5471a2_6a38e2131c85482985a2a44dfb11f0cb~mv2.png',
+  munmun: 'https://static.wixstatic.com/media/5471a2_b55032fa47824105a1dcc3486b618187~mv2.png',
+  duo: 'https://static.wixstatic.com/media/5471a2_23c176c59a5c403581c3944e6623f777~mv2.png'
+};
+
 export default function App() {
   const [screen, setScreen] = useState(screens.intro);
   const [current, setCurrent] = useState(0);
@@ -72,12 +79,9 @@ export default function App() {
   if (screen === screens.intro) {
     return (
       <main className="page intro-page">
-        <Header code="000_STATUS CHECK" />
+        <Header />
         <section className="hero frame">
-          <div className="brand-row">
-            <p className="eyebrow">해삶도 : 삶의 해상도</p>
-            <a className="insta-link" href="https://www.instagram.com/haesalmdo/" target="_blank" rel="noreferrer">@haesalmdo</a>
-          </div>
+          <div className="intro-mark">Good Enough Check</div>
           <h1>괜찮성 검사</h1>
           <p className="subtitle">나의 괜찮음을 확인합니다.</p>
           <p className="note highlight">높고 낮음을 재는 검사가 아니라, 지금 나의 상태를 조용히 살펴보는 점검입니다.</p>
@@ -86,6 +90,7 @@ export default function App() {
             <p>지금 어떤 방식으로 살아가고 있는지,<br />무너졌을 때 어떻게 돌아오고,<br />어디로 가는지 모를 때 무엇을 따라 움직이는지,<br />지나간 감정을 어떻게 다루는지 조용히 살펴본다.</p>
           </div>
           <button className="primary-btn" onClick={start}>괜찮음 확인하기</button>
+          <DecorativeCharacter src={characters.duo} className="intro-character" alt="위위와 문문이" />
         </section>
       </main>
     );
@@ -94,11 +99,12 @@ export default function App() {
   if (screen === screens.loading) {
     return (
       <main className="page loading-page">
-        <Header code="STATUS CHECKING..." />
+        <Header />
         <section className="frame loading-box">
           <p className="eyebrow">잠시만</p>
           <h2>상태값을 확인하는 중</h2>
           <p className="highlight">지나온 장면들을 정리하고 있습니다.</p>
+          <DecorativeCharacter src={characters.wiwi} className="loading-character" alt="위위" />
           <div className="loading-line" />
         </section>
       </main>
@@ -108,9 +114,9 @@ export default function App() {
   if (screen === screens.result) {
     return (
       <main className="page result-page">
-        <Header code={`RESULT_${result.id}`} />
+        <Header />
         <section className="frame result-card">
-          <p className="eyebrow">괜찮성 검사 결과</p>
+          <p className="eyebrow">{`RESULT_${String(result.id).padStart(2, '0')} · 괜찮성 검사 결과`}</p>
           <h1 className="result-title">{result.title}</h1>
           <p className="result-status highlight">{result.status}</p>
           <div className="result-body">
@@ -126,11 +132,13 @@ export default function App() {
             <summary>상태값 보기</summary>
             <p>기준: {axisLabels[resultData.selected.standard]} / 회복: {axisLabels[resultData.selected.recovery]} / 방향: {axisLabels[resultData.selected.direction]} / 감정: {axisLabels[resultData.selected.emotion]}</p>
           </details>
+          <DecorativeCharacter src={characters.munmun} className="result-character" alt="문문이" />
           <div className="button-row">
             <button className="secondary-btn" onClick={start}>다시하기</button>
             <button className="secondary-btn" onClick={copyResult}>{copied ? '복사됨' : '링크/결과 복사'}</button>
             <button className="primary-btn small" onClick={shareKakao}>카카오톡 공유</button>
           </div>
+          <a className="essaytoon-link" href={HAESALMDO_URL} target="_blank" rel="noreferrer">해삶도 에세이툰 보기</a>
         </section>
       </main>
     );
@@ -138,7 +146,7 @@ export default function App() {
 
   return (
     <main className="page test-page">
-      <Header code={`${String(question.id).padStart(3, '0')}_SCENE`} />
+      <Header />
       <section className="frame question-card">
         <div className="progress-wrap">
           <span>{String(current + 1).padStart(2, '0')} / {questions.length}</span>
@@ -170,11 +178,19 @@ export default function App() {
   );
 }
 
-function Header({ code }) {
+function Header() {
   return (
     <header className="site-header">
-      <span>{code}</span>
-      <span>Good Enough.</span>
+      <a className="header-brand" href={HAESALMDO_URL} target="_blank" rel="noreferrer">
+        <span>해삶도</span>
+        <b>:</b>
+        <span>삶의 해상도</span>
+      </a>
+      <a className="insta-link" href={HAESALMDO_URL} target="_blank" rel="noreferrer">@haesalmdo</a>
     </header>
   );
+}
+
+function DecorativeCharacter({ src, className = '', alt = '' }) {
+  return <img className={`character ${className}`} src={src} alt={alt} loading="lazy" />;
 }
