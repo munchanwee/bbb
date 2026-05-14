@@ -13,7 +13,7 @@ export const questions = [
   {
     id: 2,
     scene: '출발 당일 아침',
-    text: '알람은 울렸고,\n몸은 생각보다 늦게 켜졌다.',
+    text: '알람은 울렸는데\n몸이 생각보다 쉽게 일어나지 않았다.',
     choices: [
       { id: 'a', text: '원래 출발 전엔 늘 이런 편이다', scores: [{ axis: 'recovery', value: 'return', weight: 1 }, { axis: 'emotion', value: 'release', weight: 0.5 }] },
       { id: 'b', text: '조금만 더 누워 있다가 판단하기로 했다', scores: [{ axis: 'recovery', value: 'stay', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] },
@@ -67,8 +67,8 @@ export const questions = [
   },
   {
     id: 7,
-    scene: '낯선 가게',
-    text: '들어오긴 했는데\n무엇을 골라야 할지 모르겠다.',
+    scene: '낯선 식당',
+    text: '식당에 들어왔는데\n뭘 골라야 할지 바로 감이 오지 않는다.',
     choices: [
       { id: 'a', text: '다른 사람이 고른 걸 따라 골랐다', scores: [{ axis: 'standard', value: 'external', weight: 1 }, { axis: 'direction', value: 'no', weight: 0.5 }] },
       { id: 'b', text: '제일 끌리는 이름을 골랐다', scores: [{ axis: 'standard', value: 'internal', weight: 1 }, { axis: 'direction', value: 'no', weight: 0.5 }] },
@@ -145,7 +145,7 @@ export const questions = [
   {
     id: 14,
     scene: '마지막 밤',
-    text: '내일이면 돌아간다.\n그 말이 방 안에 가만히 있었다.',
+    text: '내일이면 다시 돌아간다.\n생각보다 밤이 길게 느껴졌다.',
     choices: [
       { id: 'a', text: '돌아가서 할 일들을 떠올렸다', scores: [{ axis: 'emotion', value: 'release', weight: 1 }, { axis: 'recovery', value: 'return', weight: 0.5 }] },
       { id: 'b', text: '오늘 있었던 일들을 천천히 꺼내봤다', scores: [{ axis: 'emotion', value: 'hold', weight: 1 }, { axis: 'recovery', value: 'stay', weight: 0.5 }] },
@@ -156,9 +156,9 @@ export const questions = [
   {
     id: 15,
     scene: '돌아가는 길',
-    text: '창밖 풍경이\n계속 뒤로 밀려났다.',
+    text: '창밖 풍경을 보는데\n괜시리 이런저런 생각들이 들었다.',
     choices: [
-      { id: 'a', text: '다음 이동을 벌써 생각하고 있었다', scores: [{ axis: 'direction', value: 'yes', weight: 1 }, { axis: 'emotion', value: 'release', weight: 0.5 }] },
+      { id: 'a', text: '다음 여행지를 벌써 고민하고 있다', scores: [{ axis: 'direction', value: 'yes', weight: 1 }, { axis: 'emotion', value: 'release', weight: 0.5 }] },
       { id: 'b', text: '돌아가면 뭘 먼저 해야 할지 정리했다', scores: [{ axis: 'direction', value: 'yes', weight: 1 }, { axis: 'recovery', value: 'return', weight: 0.5 }] },
       { id: 'c', text: '아무 생각 없이 음악만 들었다', scores: [{ axis: 'direction', value: 'no', weight: 1 }, { axis: 'emotion', value: 'release', weight: 0.5 }] },
       { id: 'd', text: '이동 중 만난 얼굴들이 떠올랐다', scores: [{ axis: 'direction', value: 'no', weight: 1 }, { axis: 'emotion', value: 'hold', weight: 0.5 }] }
